@@ -16,7 +16,9 @@
     "element-ui": "^2.15.1",
     "nuxt": "^2.15.3",
     "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0"
+    "pug-plain-loader": "^1.1.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^5.0.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
