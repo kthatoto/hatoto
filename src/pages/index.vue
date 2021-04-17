@@ -1,6 +1,7 @@
 <template lang="pug">
 .index
-  h1 {{ title }}
+  img(src="@/assets/favicon.skelton.png")
+  h1 hato.to
 </template>
 
 <script lang="ts">
@@ -17,6 +18,14 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 .index
+  padding-top: 100px
+  display: flex
+  flex-direction: column
+  align-items: center
+  img
+    width: 300px
   h1
-    font-size: 24px
+    monospaced-font()
+    font-size: 64px
+    text-align: center
 </style>

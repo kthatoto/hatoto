@@ -17,7 +17,9 @@ el-container.default
   box-sizing: border-box
   list-style: none
   text-decoration: none
-  user-select: none
+  &::selection
+    color: white
+    background-color: navy
   &:visited
     color: inherit
 </style>
