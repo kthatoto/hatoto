@@ -25,7 +25,7 @@ export default defineComponent({
   img
     width: 300px
   h1
-    monospaced-font()
     font-size: 64px
     text-align: center
+    monospaced-font()
 </style>

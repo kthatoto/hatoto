@@ -22,6 +22,9 @@ el-container.default
     background-color: navy
   &:visited
     color: inherit
+
+body
+  font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif
 </style>
 
 <style lang="stylus" scoped>
@@ -30,7 +33,6 @@ el-container.default
   .aside
     background-color: #162324
     padding-top: 20px
-    monospaced-font()
     .logo
       display: flex
       justify-content: center
