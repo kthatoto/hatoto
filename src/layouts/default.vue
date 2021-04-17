@@ -24,7 +24,8 @@ el-container.default
     color: inherit
 
 body
-  font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif
+  // font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif
+  font-family: Futura,YakuHanJP,Noto Sans JP,sans-serif
 </style>
 
 <style lang="stylus" scoped>
