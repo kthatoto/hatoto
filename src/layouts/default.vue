@@ -29,6 +29,13 @@ el-container.default
     background-color: #162324
     padding-top: 20px
     monospaced-font()
+    .logo
+      display: flex
+      justify-content: center
+      margin-bottom: 20px
+    .favicon
+      width: 150px
+
     .link
       font-size: 28px
       color: #ddd
@@ -37,15 +44,11 @@ el-container.default
       width: 100%
       padding: 8px 16px
       text-align: right
-      &:hover
+      &:hover:not(.nuxt-link-active)
         background-color: #ddd
         color: #162324
       &.nuxt-link-active
         background-color: #349
-    .logo
-      display: flex
-      justify-content: center
-      margin-bottom: 20px
-    .favicon
-      width: 150px
+        &:hover
+          opacity: 0.9
 </style>
