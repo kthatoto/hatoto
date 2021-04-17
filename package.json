@@ -16,6 +16,7 @@
     "core-js": "^3.9.1",
     "element-ui": "^2.15.1",
     "nuxt": "^2.15.3",
+    "nuxt-stylus-resources-loader": "^2.0.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "stylus": "^0.54.8",

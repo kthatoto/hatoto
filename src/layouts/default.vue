@@ -1,7 +1,8 @@
 <template lang="pug">
 el-container.default
   el-aside.aside(width="200px")
-    img.favicon(src="@/assets/favicon.skelton-white.png")
+    .logo
+      img.favicon(src="@/assets/favicon.skelton-white.png")
     router-link(to="/") Profile
     router-link(to="/") Works
     router-link(to="/") Social
@@ -26,6 +27,8 @@ el-container.default
   height: 100vh
   .aside
     background-color: #162324
+    padding-top: 20px
+    monospaced-font()
     a
       font-size: 24px
       color: white
@@ -33,6 +36,9 @@ el-container.default
       width: 100%
       padding: 8px 16px
       text-align: right
+    .logo
+      display: flex
+      justify-content: center
     .favicon
-      width: 50px
+      width: 150px
 </style>
