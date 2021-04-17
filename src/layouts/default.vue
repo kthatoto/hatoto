@@ -1,11 +1,11 @@
 <template lang="pug">
 el-container.default
   el-aside.aside(width="200px")
-    .logo
+    router-link.logo(to="/")
       img.favicon(src="@/assets/favicon.skelton-white.png")
-    router-link(to="/") Profile
-    router-link(to="/") Works
-    router-link(to="/") Social
+    router-link.link(to="/profile") Profile
+    router-link.link(to="/works") Works
+    router-link.link(to="/social") Social
   el-main.main
     Nuxt
 </template>
@@ -29,13 +29,19 @@ el-container.default
     background-color: #162324
     padding-top: 20px
     monospaced-font()
-    a
+    .link
       font-size: 28px
-      color: white
+      color: #ddd
+      font-weight: bold
       display: inline-block
       width: 100%
       padding: 8px 16px
       text-align: right
+      &:hover
+        background-color: #ddd
+        color: #162324
+      &.nuxt-link-active
+        background-color: #349
     .logo
       display: flex
       justify-content: center
