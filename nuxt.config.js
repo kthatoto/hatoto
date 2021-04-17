@@ -30,11 +30,11 @@ export default {
     '@nuxt/typescript-build'
   ],
   modules: [
-    '@nuxtjs/axios',
-    ['nuxt-stylus-resources-loader', [
-      resolve(__dirname, 'src/styles/common-mixins.styl')
-    ]]
+    '@nuxtjs/axios'
   ],
+  styleResources: {
+    stylus: resolve(__dirname, 'src/styles/index.styl')
+  },
   axios: {},
   build: {
     transpile: [/^element-ui/]
