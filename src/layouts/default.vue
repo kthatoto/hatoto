@@ -1,6 +1,12 @@
 <template lang="pug">
-div
-  Nuxt
+el-container.default
+  el-aside.aside(width="200px")
+    img.favicon(src="@/assets/favicon.skelton-white.png")
+    router-link(to="/") Profile
+    router-link(to="/") Works
+    router-link(to="/") Social
+  el-main.main
+    Nuxt
 </template>
 
 <style lang="stylus">
@@ -13,4 +19,20 @@ div
   user-select: none
   &:visited
     color: inherit
+</style>
+
+<style lang="stylus" scoped>
+.default
+  height: 100vh
+  .aside
+    background-color: #162324
+    a
+      font-size: 24px
+      color: white
+      display: inline-block
+      width: 100%
+      padding: 8px 16px
+      text-align: right
+    .favicon
+      width: 50px
 </style>
