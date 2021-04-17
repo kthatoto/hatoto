@@ -30,7 +30,7 @@ el-container.default
     padding-top: 20px
     monospaced-font()
     a
-      font-size: 24px
+      font-size: 28px
       color: white
       display: inline-block
       width: 100%
@@ -39,6 +39,7 @@ el-container.default
     .logo
       display: flex
       justify-content: center
+      margin-bottom: 20px
     .favicon
       width: 150px
 </style>
