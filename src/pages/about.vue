@@ -1,16 +1,16 @@
 <template lang="pug">
-.profile
+.about
   table
     tr
-      th 名前
+      th Name
       td Kazuto Takahashi
     tr
-      th 生年月
-      td 1996年2月
+      th Live in
+      td Tokyo
 </template>
 
 <style lang="stylus" scoped>
-.profile
+.about
   table
     width: 400px
     margin: auto
