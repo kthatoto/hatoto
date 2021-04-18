@@ -12,25 +12,18 @@
       th Live in
       td Tokyo
 
-  p.skills__header Frontend Development
-  table.skills__table
-    tr
-      th JavaScript
-    tr
-      th jQuery
-    tr
-      th React
-    tr
-      th Vue
-    tr
-      th React Native
-    tr
-      th Nuxt
-    tr
-      th TypeScript
-
-  p Serverside Development
+  SkillTable
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+
+import SkillTable from '@/components/SkillTable'
+
+export default defineComponent({
+  components: { SkillTable }
+})
+</script>
 
 <style lang="stylus" scoped>
 .about
@@ -50,13 +43,4 @@
     td
       font-weight: bold
       font-size: 24px
-
-  .skills
-    &__header
-      margin-bottom: 4px
-    &__table
-      th
-        text-align: right
-        font-size: 24px
-        padding-right: 8px
 </style>
