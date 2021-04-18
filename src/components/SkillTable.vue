@@ -36,23 +36,34 @@ export default defineComponent({
   width: 100%
   table-layout: fixed
   overflow: scroll
-  $month-width = 16px
+  $month-width = 20px
   table
-    width: 1000px
+    width: 100%
+    min-width: 1200px
     border-collapse: collapse
+    border-right: 1px solid black
     th, td
       border: 1px solid black
+    th
+      position: sticky
+      background-color: white
+      width: 200px
+      height: 20px
+      left: 0
+      &:before
+        content: ""
+        position: absolute
+        top: -1px
+        left: -1px
+        width: 100%
+        height: 100%
+        border: 1px solid black
     thead
       th
         border: none
       td
         width: "calc(12 * %s)" % $month-width
     tbody
-      th
-        position: sticky
-        width: 280px
-        height: 30px
-        left: 0
       td
         width: $month-width
         height: 30px
