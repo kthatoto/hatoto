@@ -4,12 +4,12 @@
     thead
       tr
         th
-        td(v-for="year in years" :key="year" colspan="12") {{ year }}
+        td(v-for="(_months, year) in yearMonths" :key="year" colspan="12") {{ year }}
     tbody
       tr(v-for="skill in skills" :key="skill.name")
         th {{ skill.name }}
-        template(v-for="year in years")
-          td(v-for="month in 12" :key="year * 100 + i" :style="{ backgroundColor: colorFromYearMonth(skill.name, year, month) }")
+        template(v-for="(months, year) in yearMonths")
+          td(v-for="month in months" :key="year * 100 + month" :style="{ backgroundColor: colorFromYearMonth(skill.name, year, month) }")
 </template>
 
 <script lang="ts">
@@ -17,7 +17,16 @@ import { defineComponent } from '@vue/composition-api'
 
 interface Skill {
   name: string
-  activities: { [year: number]: number[] }
+  levels: { [year: number]: number[] }
+}
+
+const yearMonths = {
+  2016: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  2017: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  2018: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  2019: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  2020: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  2021: [1, 2, 3, 4],
 }
 
 export default defineComponent({
@@ -25,8 +34,22 @@ export default defineComponent({
     const skills = [
       {
         name: "JavaScript",
-        activities: {
-          2016: [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 3, 2]
+        levels: {
+          2016: [0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 4, 4],
+          2017: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          2018: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          2019: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          2020: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          2020: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          2021: [4, 4, 4, 4],
+        }
+      },
+      {
+        name: "jQuery",
+        levels: {
+          2016: [0, 0, 0, 0, 0, 0, 1, 3, 4, 4, 4, 4],
+          2017: [4, 4, 4, 4, 3, 1],
+          2018: [0, 0, 0, 0, 0, 1, 2]
         }
       }
     ]
@@ -38,16 +61,16 @@ export default defineComponent({
     const colorFromYearMonth = (skillName: string, year: number, month: number) => {
       const skill = findSkillByName(skillName)
       if (!skill) return
-      const yearActivities = skill.activities[year]
-      if (!yearActivities) return
-      const monthActivity = yearActivities[month - 1]
-      if (!monthActivity) return
+      const yearLevels = skill.levels[year]
+      if (!yearLevels) return
+      const monthLevel = yearLevels[month - 1]
+      if (!monthLevel) return
       const colors = { 1: '#9be9a8', 2: '#40c463', 3: '#30a14e', 4: '#216e39' }
-      return colors[monthActivity]
+      return colors[monthLevel]
     }
 
     return {
-      years: [2016, 2017, 2018, 2019, 2020, 2021],
+      yearMonths,
       skills,
       colorFromYearMonth
     }
