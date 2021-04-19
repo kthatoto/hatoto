@@ -3,10 +3,10 @@
   table
     thead
       tr
-        th
+        th Frontend
         td(v-for="(_months, year) in yearMonths" :key="year" colspan="12") {{ year }}
     tbody
-      tr(v-for="skill in skills" :key="skill.name")
+      tr(v-for="skill in frontendSkills" :key="skill.name")
         th {{ skill.name }}
         template(v-for="(months, year) in yearMonths")
           td(
@@ -21,7 +21,7 @@
 import { defineComponent } from '@vue/composition-api'
 
 import ActivityField from '@/components/ActivityField.vue'
-import { skills, Skill } from '@/data/skills'
+import { frontendSkills, Skill } from '@/data/skills'
 
 const yearMonths = {
   2016: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -55,7 +55,7 @@ export default defineComponent({
 
     return {
       yearMonths,
-      skills,
+      frontendSkills,
       colorFromYearMonth,
       activityFromYearMonth
     }
@@ -94,14 +94,17 @@ export default defineComponent({
         border: 1px solid black
     thead
       th
-        border: none
+        padding-right: 8px
+        font-weight: normal
+        text-align: right
+        z-index: 1
       td
         width: "calc(12 * %s)" % $month-width
     tbody
       th
         padding-right: 8px
         text-align: right
-        z-index: 1
+        z-index: 3000
       td
         width: $month-width
         height: 30px

@@ -55,7 +55,7 @@ const drecomLT = {
   image: require("@/assets/about/drecom-lt.jpg")
 }
 
-export const skills: Skill[] = [
+export const frontendSkills: Skill[] = [
   {
     name: "JavaScript",
     levels: {
