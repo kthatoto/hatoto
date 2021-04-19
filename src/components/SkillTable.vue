@@ -9,15 +9,33 @@
       tr(v-for="skill in skills" :key="skill.name")
         th {{ skill.name }}
         template(v-for="(months, year) in yearMonths")
-          td(v-for="month in months" :key="year * 100 + month" :style="{ backgroundColor: colorFromYearMonth(skill.name, year, month) }")
+          td(
+            v-for="month in months"
+            :key="year * 100 + month"
+            :style="{ backgroundColor: colorFromYearMonth(skill, year, month) }"
+          )
+            ActivityField(:activity="activityFromYearMonth(skill, year, month)")
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
+import ActivityField from '@/components/ActivityField.vue'
+
+export interface Activity {
+  length: number
+  title: string
+  link: string
+}
+
 interface Skill {
   name: string
   levels: { [year: number]: number[] }
+  activities?: {
+    [year: number]: {
+      [month: number]: Activity
+    }
+  }
 }
 
 const yearMonths = {
@@ -30,6 +48,7 @@ const yearMonths = {
 }
 
 export default defineComponent({
+  components: { ActivityField },
   setup () {
     const skills = [
       {
@@ -50,17 +69,20 @@ export default defineComponent({
           2016: [0, 0, 0, 0, 0, 0, 1, 3, 4, 4, 4, 4],
           2017: [4, 4, 4, 4, 3, 1],
           2018: [0, 0, 0, 0, 0, 1, 2]
+        },
+        activities: {
+          2018: {
+            6: {
+              length: 2,
+              title: "ゼロから作る！Vue.js x vue-cliハンズオン",
+              link: "https://cloudpayment-sys.connpass.com/event/91212/"
+            }
+          }
         }
       }
     ]
 
-    const findSkillByName = (name: string): Skill | undefined => {
-      return skills.find((skill: Skill) => skill.name === name)
-    }
-
-    const colorFromYearMonth = (skillName: string, year: number, month: number) => {
-      const skill = findSkillByName(skillName)
-      if (!skill) return
+    const colorFromYearMonth = (skill: Skill, year: number, month: number) => {
       const yearLevels = skill.levels[year]
       if (!yearLevels) return
       const monthLevel = yearLevels[month - 1]
@@ -69,10 +91,20 @@ export default defineComponent({
       return colors[monthLevel]
     }
 
+    const activityFromYearMonth = (skill: Skill, year: number, month: number) => {
+      if (!skill.activities) return
+      const yearActivities = skill.activities[year]
+      if (!yearActivities) return
+      const monthActivity = yearActivities[month]
+      if (!monthActivity) return
+      return monthActivity
+    }
+
     return {
       yearMonths,
       skills,
-      colorFromYearMonth
+      colorFromYearMonth,
+      activityFromYearMonth
     }
   }
 })
@@ -116,4 +148,6 @@ export default defineComponent({
       td
         width: $month-width
         height: 30px
+        position: relative
 </style>
+
