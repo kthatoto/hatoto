@@ -1,6 +1,6 @@
 export interface Activity {
   length: number
-  title: string
+  content: string
   link: string
 }
 
@@ -16,7 +16,7 @@ export interface Skill {
 
 const handsOnActivity = {
   length: 2,
-  title: "【ゼロから作る！Vue.js x vue-cliハンズオン】で講師を担当",
+  content: "【ゼロから作る！Vue.js x vue-cliハンズオン】で、講義内容の作成から講師まで行いました。jQueryとVue.js両方でTodoアプリを作ってみてVue.jsのメリットを理解しやすいような講義にしました。",
   link: "https://cloudpayment-sys.connpass.com/event/91212/"
 }
 export const skills: Skill[] = [
@@ -54,7 +54,7 @@ export const skills: Skill[] = [
       2017: {
         12: {
           length: 1,
-          title: "【TRUNK CREATOR'S DEMO DAY】で製作物発表",
+          content: "【TRUNK CREATOR'S DEMO DAY】で製作物発表",
           link: "https://images.app.goo.gl/m2RfvRpbBkZ1PMVK8"
         }
       }

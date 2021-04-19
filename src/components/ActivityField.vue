@@ -1,7 +1,8 @@
 <template lang="pug">
 el-tooltip(v-if="activity" popper-class="activity-content")
   template(slot="content")
-    a(:href="activity.link" target="_blank") {{ activity.title }}
+    p {{ activity.content }}
+    a(:href="activity.link" target="_blank") {{ activity.link }}
   .activity(:style="widthFromActivityLength(activity.length)")
 </template>
 
@@ -43,5 +44,7 @@ export default defineComponent({
 
 <style lang="stylus">
 .activity-content
-  text-decoration: underline
+  max-width: 300px
+  a
+    text-decoration: underline
 </style>
