@@ -50,7 +50,7 @@ export default defineComponent({
 
 <style lang="stylus">
 .activity-content
-  max-width: 500px
+  max-width: 650px
   display: flex
   align-items: flex-start
   .content
@@ -70,6 +70,6 @@ export default defineComponent({
       height: 50px
   img
     margin-left: 8px
-    width: 200px
+    width: 300px
     height: auto
 </style>

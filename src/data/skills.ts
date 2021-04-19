@@ -29,7 +29,7 @@ const trunkDemoDay = {
   length: 1,
   content: "【TRUNK CREATOR'S DEMO DAY】で製作物を発表しました。React x RailsでCLIライクな操作ができるタスク管理Webアプリを作りました。",
   links: [
-    { link: "https://room.trunk.school/campus-life/9023", description: "イベントページ" }
+    { link: "https://room.trunk.school/campus-life/9023", description: "イベント記事" }
   ],
   github: "https://github.com/kthatoto/basenote",
   image: require("@/assets/about/trunk-demo-day.jpg")
@@ -43,6 +43,16 @@ const heiseiLastHackathon = {
   ],
   github: "https://github.com/team-aluminum/super-heisei-mario",
   image: require("@/assets/about/heisei-last-hackathon.jpeg")
+}
+const drecomLT = {
+  length: 1,
+  content: "ドリコム主催【夏のエンジニア総選挙】というLT会で発表し、投票で「総帥」賞をもらいました。内容はGitHubのissuesをCMSに見立ててGitHubが公開しているGraphQL APIを叩きブログシステムを手間をかけずに作るというものです。",
+  links: [
+    { link: "https://www.wantedly.com/companies/drecom/post_articles/132124", description: "イベント記事" },
+    { link: "https://speakerdeck.com/kthatoto/bokufalsekangaetasaikiyoufalseburogusisutemu", description: "発表資料" }
+  ],
+  github: "https://github.com/kthatoto/hatotology",
+  image: require("@/assets/about/drecom-lt.jpg")
 }
 
 export const skills: Skill[] = [
@@ -63,11 +73,6 @@ export const skills: Skill[] = [
       2016: [0, 0, 0, 0, 0, 0, 1, 3, 4, 4, 4, 4],
       2017: [4, 4, 4, 4, 3, 1],
       2018: [0, 0, 0, 0, 0, 1, 2]
-    },
-    activities: {
-      2018: {
-        6: vueHandsOn
-      }
     }
   },
   {
@@ -100,6 +105,20 @@ export const skills: Skill[] = [
     }
   },
   {
+    name: "Nuxt",
+    levels: {
+      2018: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2],
+      2019: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+      2020: [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3],
+      2021: [3, 3, 3, 3],
+    },
+    activities: {
+      2018: {
+        8: drecomLT
+      }
+    }
+  },
+  {
     name: "Vue Native",
     levels: {
       2018: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
@@ -110,14 +129,6 @@ export const skills: Skill[] = [
     name: "React Native",
     levels: {
       2019: [0, 0, 0, 0, 1, 3]
-    }
-  },
-  {
-    name: "Nuxt",
-    levels: {
-      2019: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2],
-      2020: [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3],
-      2021: [3, 3, 3, 3],
     }
   },
   {
