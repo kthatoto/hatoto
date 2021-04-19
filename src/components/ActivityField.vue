@@ -36,7 +36,7 @@ export default defineComponent({
   top: 4px
   height: 10px
   border-radius: 5px
-  background-color: #DB1D32
+  background-color: #e49e61
   cursor: pointer
   z-index: 1
 </style>

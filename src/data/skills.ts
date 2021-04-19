@@ -16,7 +16,7 @@ export interface Skill {
 
 const handsOnActivity = {
   length: 2,
-  title: "ゼロから作る！Vue.js x vue-cliハンズオン",
+  title: "【ゼロから作る！Vue.js x vue-cliハンズオン】で講師を担当",
   link: "https://cloudpayment-sys.connpass.com/event/91212/"
 }
 export const skills: Skill[] = [
@@ -54,7 +54,7 @@ export const skills: Skill[] = [
       2017: {
         12: {
           length: 1,
-          title: "TRUNK CREATOR'S DEMO DAYで製作物発表",
+          title: "【TRUNK CREATOR'S DEMO DAY】で製作物発表",
           link: "https://images.app.goo.gl/m2RfvRpbBkZ1PMVK8"
         }
       }
@@ -72,6 +72,34 @@ export const skills: Skill[] = [
       2018: {
         6: handsOnActivity
       }
+    }
+  },
+  {
+    name: "Vue Native",
+    levels: {
+      2018: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+      2019: [1, 1, 1]
+    }
+  },
+  {
+    name: "React Native",
+    levels: {
+      2019: [0, 0, 0, 0, 1, 3]
+    }
+  },
+  {
+    name: "Nuxt",
+    levels: {
+      2019: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2],
+      2020: [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3],
+      2021: [3, 3, 3, 3],
+    }
+  },
+  {
+    name: "TypeScript",
+    levels: {
+      2020: [0, 1, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4],
+      2021: [4, 4, 4, 4],
     }
   }
 ]
