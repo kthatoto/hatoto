@@ -40,7 +40,7 @@ const heiseiLastHackathon = {
     { link: "https://buchio.ever.jp/ca-last-heisei-hackathon/", description: "チームメイトのブログ" },
     { link: "https://super-heisei-mario.netlify.app/", description: "成果物" }
   ],
-  github: "https://github.com/team-aluminum/super-heisei-mario"
+  github: "https://github.com/team-aluminum/super-heisei-mario",
   image: require("@/assets/about/heisei-last-hackathon.jpeg")
 }
 
