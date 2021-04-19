@@ -139,3 +139,16 @@ export const frontendSkills: Skill[] = [
     }
   }
 ]
+
+export const serversideSkills: Skill[] = [
+  {
+    name: "PHP",
+    levels: {
+      2016: [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
+      2017: [4, 4, 4, 4, 1, 1, 3, 4, 4, 4, 4, 4],
+      2018: [4, 4, 4, 4, 4, 3, 3]
+    }
+  }
+]
+
+export const otherSkills: Skill[] = []

@@ -3,10 +3,40 @@
   table
     thead
       tr
-        th Frontend
+        th Front-End
         td(v-for="(_months, year) in yearMonths" :key="year" colspan="12") {{ year }}
     tbody
       tr(v-for="skill in frontendSkills" :key="skill.name")
+        th {{ skill.name }}
+        template(v-for="(months, year) in yearMonths")
+          td(
+            v-for="month in months"
+            :key="year * 100 + month"
+            :style="{ backgroundColor: colorFromYearMonth(skill, year, month) }"
+          )
+            ActivityField(:activity="activityFromYearMonth(skill, year, month)")
+
+    thead
+      tr
+        th Server-Side
+        td(v-for="(_months, year) in yearMonths" :key="year" colspan="12") {{ year }}
+    tbody
+      tr(v-for="skill in serversideSkills" :key="skill.name")
+        th {{ skill.name }}
+        template(v-for="(months, year) in yearMonths")
+          td(
+            v-for="month in months"
+            :key="year * 100 + month"
+            :style="{ backgroundColor: colorFromYearMonth(skill, year, month) }"
+          )
+            ActivityField(:activity="activityFromYearMonth(skill, year, month)")
+
+    thead
+      tr
+        th Others
+        td(v-for="(_months, year) in yearMonths" :key="year" colspan="12") {{ year }}
+    tbody
+      tr(v-for="skill in otherSkills" :key="skill.name")
         th {{ skill.name }}
         template(v-for="(months, year) in yearMonths")
           td(
@@ -21,7 +51,7 @@
 import { defineComponent } from '@vue/composition-api'
 
 import ActivityField from '@/components/ActivityField.vue'
-import { frontendSkills, Skill } from '@/data/skills'
+import { frontendSkills, serversideSkills, otherSkills, Skill } from '@/data/skills'
 
 const yearMonths = {
   2016: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -56,6 +86,8 @@ export default defineComponent({
     return {
       yearMonths,
       frontendSkills,
+      serversideSkills,
+      otherSkills,
       colorFromYearMonth,
       activityFromYearMonth
     }
