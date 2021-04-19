@@ -9,7 +9,7 @@ el-tooltip(v-if="activity" popper-class="activity-content")
       a(:href="activity.github" v-if="activity.github" target="_blank")
         img.github-icon(src="@/assets/github-white-icon.png")
     img.image(v-if="activity.image" :src="activity.image")
-  .activity(:style="widthFromActivityLength(activity.length)")
+  .activity(:style="[widthFromActivityLength(activity.length), activityColor(activity.type)]")
 </template>
 
 <script lang="ts">
@@ -28,9 +28,14 @@ export default defineComponent({
     const widthFromActivityLength = (length: number) => {
       return { width: `calc(${length * 100}% + ${(length - 1) * 1.5}px)` }
     }
+    const activityColor = (type: "activity" | "work") => {
+      if (type === "activity") return { backgroundColor: "#e49e61" }
+      if (type === "work") return { backgroundColor: "yellow", border: "1px solid black" }
+    }
 
     return {
-      widthFromActivityLength
+      widthFromActivityLength,
+      activityColor
     }
   }
 })
@@ -43,7 +48,6 @@ export default defineComponent({
   top: 4px
   height: 10px
   border-radius: 5px
-  background-color: #e49e61
   cursor: pointer
   z-index: 1
 </style>
@@ -55,12 +59,10 @@ export default defineComponent({
   align-items: flex-start
   .content
     max-width: 300px
-    p
-      margin-bottom: 16px
     a
       text-decoration: underline
     .link
-      margin-bottom: 8px
+      margin: 8px 0
       label
         display: block
         font-weight: bold
