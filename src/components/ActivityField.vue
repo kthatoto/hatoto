@@ -1,8 +1,10 @@
 <template lang="pug">
 el-tooltip(v-if="activity" popper-class="activity-content")
   template(slot="content")
-    p {{ activity.content }}
-    a(:href="activity.link" target="_blank") {{ activity.link }}
+    .content
+      p {{ activity.content }}
+      a(:href="activity.link" target="_blank") {{ activity.link }}
+    img.image(v-if="activity.image" :src="activity.image")
   .activity(:style="widthFromActivityLength(activity.length)")
 </template>
 
@@ -44,7 +46,15 @@ export default defineComponent({
 
 <style lang="stylus">
 .activity-content
-  max-width: 300px
-  a
-    text-decoration: underline
+  max-width: 500px
+  display: flex
+  .content
+    max-width: 300px
+    p
+      margin-bottom: 16px
+    a
+      text-decoration: underline
+  img
+    margin-left: 8px
+    width: 200px
 </style>

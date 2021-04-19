@@ -16,8 +16,9 @@ export interface Skill {
 
 const handsOnActivity = {
   length: 2,
-  content: "【ゼロから作る！Vue.js x vue-cliハンズオン】で、講義内容の作成から講師まで行いました。jQueryとVue.js両方でTodoアプリを作ってみてVue.jsのメリットを理解しやすいような講義にしました。",
-  link: "https://cloudpayment-sys.connpass.com/event/91212/"
+  content: "【ゼロから作る！Vue.js x vue-cliハンズオン】で講義内容の作成から当日の講師まで行いました。jQueryとVue.js両方でTodoアプリを作ってみてVue.jsのメリットを理解しやすいような講義を意識しました。",
+  link: "https://cloudpayment-sys.connpass.com/event/91212/",
+  image: require("@/assets/about/vue-handson.jpg")
 }
 export const skills: Skill[] = [
   {
