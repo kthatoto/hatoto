@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
-import SkillTable from '@/components/SkillTable'
+import SkillTable from '@/components/SkillTable.vue'
 
 export default defineComponent({
   components: { SkillTable }

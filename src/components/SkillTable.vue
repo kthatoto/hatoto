@@ -21,7 +21,7 @@
 import { defineComponent } from '@vue/composition-api'
 
 import ActivityField from '@/components/ActivityField.vue'
-import { skills, Skill } from '@/data/skills.ts'
+import { skills, Skill } from '@/data/skills'
 
 const yearMonths = {
   2016: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -40,7 +40,7 @@ export default defineComponent({
       if (!yearLevels) return
       const monthLevel = yearLevels[month - 1]
       if (!monthLevel) return
-      const colors = { 1: '#9be9a8', 2: '#40c463', 3: '#30a14e', 4: '#216e39' }
+      const colors: { [level: number]: string } = { 1: '#9be9a8', 2: '#40c463', 3: '#30a14e', 4: '#216e39' }
       return colors[monthLevel]
     }
 

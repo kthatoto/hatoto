@@ -8,7 +8,7 @@ el-tooltip(v-if="activity" popper-class="activity-content")
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 
-import { Activity } from '@/data/skills.ts'
+import { Activity } from '@/data/skills'
 
 export default defineComponent({
   props: {
