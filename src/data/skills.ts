@@ -18,10 +18,11 @@ export interface Skill {
 
 const vueHandsOn = {
   length: 2,
-  content: "【ゼロから作る！Vue.js x vue-cliハンズオン】で講義内容の作成から当日の講師まで行いました。jQueryとVue.js両方でTodoアプリを作ってみてVue.jsのメリットを理解しやすいような講義を意識しました。",
+  content: "【ゼロから作る！Vue.js x vue-cliハンズオン】で講義内容の作成から当日の講師まで行いました。jQueryとVue.js両方で簡易的な機能を作ってみてVue.jsのメリットを理解しやすいような講義を意識しました。",
   links: [
     { link: "https://cloudpayment-sys.connpass.com/event/91212/", description: "イベントページ" }
   ],
+  github: "https://github.com/kthatoto/jquery-vue-comparison",
   image: require("@/assets/about/vue-handson.jpg")
 }
 const trunkDemoDay = {
