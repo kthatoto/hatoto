@@ -1,6 +1,6 @@
 export interface Activity {
   length: number
-  type: "activity" | "work"
+  type: string
   content: string
   links?: { link: string, description: string }[]
   github?: string
