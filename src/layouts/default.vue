@@ -4,7 +4,6 @@ el-container.default
     router-link.logo(to="/")
       img.favicon(src="@/assets/favicon.skelton-white.png")
     router-link.link(to="/about") About
-    router-link.link(to="/works") Works
     router-link.link(to="/social") Social
   el-main.main
     Nuxt
