@@ -101,9 +101,9 @@ export default defineComponent({
       th
         padding-right: 8px
         text-align: right
+        z-index: 1
       td
         width: $month-width
         height: 30px
         position: relative
 </style>
-
