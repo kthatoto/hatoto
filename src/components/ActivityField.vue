@@ -8,7 +8,7 @@ el-tooltip(v-if="activity" popper-class="activity-content")
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 
-import { Activity } from '@/components/SkillTable.vue'
+import { Activity } from '@/data/skills.ts'
 
 export default defineComponent({
   props: {
@@ -19,7 +19,7 @@ export default defineComponent({
   },
   setup () {
     const widthFromActivityLength = (length: number) => {
-      return { width: `calc(${100 * length}% - 8px)` }
+      return { width: `calc(${length * 100}% + ${(length - 1) * 1.5}px)` }
     }
 
     return {
@@ -32,11 +32,11 @@ export default defineComponent({
 <style lang="stylus" scoped>
 .activity
   position: absolute
-  left: 4px
+  left: 0
   top: 4px
   height: 10px
   border-radius: 5px
-  background-color: blue
+  background-color: #DB1D32
   cursor: pointer
   z-index: 1
 </style>
