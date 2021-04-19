@@ -98,6 +98,9 @@ export default defineComponent({
       td
         width: "calc(12 * %s)" % $month-width
     tbody
+      th
+        padding-right: 8px
+        text-align: right
       td
         width: $month-width
         height: 30px
